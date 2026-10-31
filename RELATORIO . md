@@ -1,0 +1,23 @@
+ Relatório do Desafio - Folhagem & Cia
+
+1. O que foi feito
+
+Implementei a estrutura completa da API para a entidade Planta seguindo a arquitetura em camadas do projeto base.
+
+· Model e Migration: Criei o enum Luminosidade e o model Planta no schema.prisma e gerei a migration.
+· Repository: Criei o PlantaRepository.ts com as funções de acesso ao banco.
+· Controller: Criei o PlantaController.ts com as validações de regras de negócio (preço > 0, estoque >= 0, etc).
+· Rotas: Registrei todas as rotas em routes.ts, respeitando a ordem correta.
+· Bônus: Não implementei os itens extras para focar no obrigatório.
+
+2. Como foi feito
+
+Segui a ordem sugerida: Model, Repository, Controller e Rotas. Decidi usar o banco de dados na nuvem (Neon) porque o Docker apresentou problemas de espaço em disco na minha máquina. A validação no Controller foi feita usando typeof e Number.isInteger para garantir a integridade dos dados antes de chegar ao banco.
+
+3. Principais dificuldades
+
+A maior dificuldade foi a configuração do ambiente. Enfrentei problemas de falta de espaço no HD e um erro persistente de permissão (EPERM) no Windows ao rodar o Prisma, que bloqueava o servidor de iniciar. Tentei limpar o cache, mover o projeto para fora do OneDrive e reinstalar dependências, mas o erro do sistema operacional persistiu até o fim do prazo. O código está completo conforme o enunciado.
+
+4. Uso de IA
+
+Sim, utilizei uma IA como assistente. Usei principalmente para entender os erros de configuração do ambiente e para revisar a lógica de validação do Controller. Aprendi sobre a importância da arquitetura em camadas e como o Prisma gerencia o banco.
